@@ -1,34 +1,15 @@
-let code = 0
-basic.showString("Welcome.")
-input.onButtonPressed(Button.A, function on_button_pressed_a() {
-    let random_num: number;
-    
-    for (let index = 0; index < 4; index++) {
-        random_num = randint(1, 5)
+input.onButtonPressed(Button.A, function () {
+    random_num = randint(0, 100)
+    basic.showNumber(random_num)
+    if (random_num < 50) {
+        basic.showString("Oop, sorry!")
+    } else {
+        basic.showString("Great!")
     }
-    if (random_num == 1) {
-        basic.showIcon(IconNames.Meh)
-        code = 12121
-    }
-    
-    if (random_num == 2) {
-        basic.showIcon(IconNames.Surprised)
-        code = 2220
-    }
-    
-    if (random_num == 3) {
-        basic.showIcon(IconNames.Triangle)
-        code = 12221
-    }
-    
-    if (random_num == 4) {
-        basic.showIcon(IconNames.Scissors)
-        code = 44122
-    }
-    
-    if (random_num == 5) {
-        basic.showIcon(IconNames.Chessboard)
-        code = 23232
-    }
-    
 })
+let random_num = 0
+basic.showString("LIFE GOALS METER")
+basic.showString("Welcome")
+basic.pause(200)
+basic.showString("Press A to see the % chance for achieving your goals")
+basic.showIcon(IconNames.Happy)
