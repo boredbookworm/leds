@@ -1,22 +1,21 @@
-code = 0
-basic.show_string("Welcome.")
+def on_forever():
+    music.play_melody("G C5 A F E F F C5 ", 174)
+basic.forever(on_forever)
+
 def on_button_pressed_a():
-    global code
-    for index in range(4):
-        random_num = randint(1, 5)
-    if random_num == 1:
-        basic.show_icon(IconNames.MEH)
-        code = 12121
-    if random_num == 2:
-        basic.show_icon(IconNames.SURPRISED)
-        code = 2220
-    if random_num == 3:
-        basic.show_icon(IconNames.TRIANGLE)
-        code = 12221
-    if random_num == 4:
-        basic.show_icon(IconNames.SCISSORS)
-        code = 44122
-    if random_num == 5:
-        basic.show_icon(IconNames.CHESSBOARD)
-        code = 23232
+    global random_num
+    random_num = randint(0, 100)
+    basic.show_number(random_num)
+    if random_num < 50:
+        basic.show_string("Oop, sorry!")
+    else:
+        basic.show_string("Great!")
 input.on_button_pressed(Button.A, on_button_pressed_a)
+
+random_num = 0
+basic.show_string("LIFE GOALS METER")
+basic.show_string("Welcome")
+basic.pause(200)
+basic.show_string("Press A to see the % chance for achieving your goals")
+basic.show_icon(IconNames.HAPPY)
+

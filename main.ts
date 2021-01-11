@@ -1,4 +1,8 @@
-input.onButtonPressed(Button.A, function () {
+basic.forever(function on_forever() {
+    music.playMelody("G C5 A F E F F C5 ", 174)
+})
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    
     random_num = randint(0, 100)
     basic.showNumber(random_num)
     if (random_num < 50) {
@@ -6,6 +10,7 @@ input.onButtonPressed(Button.A, function () {
     } else {
         basic.showString("Great!")
     }
+    
 })
 let random_num = 0
 basic.showString("LIFE GOALS METER")
